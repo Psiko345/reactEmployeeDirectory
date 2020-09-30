@@ -15,7 +15,19 @@ const useSortableData = (employees, config = null) => {
                     return sortConfig.direction === 'ascending' ? 1 : -1;
                 }
                 return 0
-            })
+            });
         }
-    })
+        return sortableItems;
+    }, [employees, sortConfig]);
+
+    const requestSort = (key) => {
+        let direction = 'ascending';
+        if (
+            sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending'
+        ) {
+            direction = 'descending';
+        }
+        setSortConfig({ key, direction })
+    };
+    return { employees: sortedItems, requestSort, sortConfig }
 }
