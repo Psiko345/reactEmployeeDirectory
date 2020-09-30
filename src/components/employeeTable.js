@@ -45,13 +45,13 @@ const EmployeesTable = (props) => {
         <Table striped bordered hover>
             <thead>
                 <tr>
-                    <th> <button onClick={() => requestSort('id')} className={getClassNamesFor('id')}> Employee ID </button> </th>
+                    <th> <Button onClick={() => requestSort('id')} className={getClassNamesFor('id')}> Employee ID </Button> </th>
                     <th> Image </th>
                     <th> Title </th>
-                    <th> <button onClick={() => requestSort('firstName')} className={getClassNamesFor('firstName')}> First Name </button> </th>
-                    <th> <button onClick={() => requestSort('lastName')} className={getClassNamesFor('lastName')}> Last Name </button> </th>
-                    <th> <button onClick={() => requestSort('email')} className={getClassNamesFor('email')}> E-mail </button> </th>
-                    <th> <button onClick={() => requestSort('phone')} className={getClassNamesFor('phone')}> Phone </button> </th>
+                    <th> <Button onClick={() => requestSort('firstName')} className={getClassNamesFor('firstName')}> First Name </Button> </th>
+                    <th> <Button onClick={() => requestSort('lastName')} className={getClassNamesFor('lastName')}> Last Name </Button> </th>
+                    <th> <Button onClick={() => requestSort('email')} className={getClassNamesFor('email')}> E-mail </Button> </th>
+                    <th> <Button onClick={() => requestSort('phone')} className={getClassNamesFor('phone')}> Phone </Button> </th>
                 </tr>
             </thead>
             <tbody>
