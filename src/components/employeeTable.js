@@ -30,4 +30,47 @@ const useSortableData = (employees, config = null) => {
         setSortConfig({ key, direction })
     };
     return { employees: sortedItems, requestSort, sortConfig }
+};
+
+const EmployeesTable = (props) => {
+    const { employees, requestSort, sortConfig } = useSortableData(props.employees);
+    const getClassNamesFor = (name) => {
+        if (!sortConfig) {
+            return;
+        }
+        return sortConfig.key === name ? sortConfig.direction : undefined;
+    };
+
+    return (
+        <Table striped bordered hover>
+            <thead>
+                <tr>
+                    <th> <button onClick={() => requestSort('id')} className={getClassNamesFor('id')}> Employee ID </button> </th>
+                    <th> Image </th>
+                    <th> Title </th>
+                    <th> <button onClick={() => requestSort('firstName')} className={getClassNamesFor('firstName')}> First Name </button> </th>
+                    <th> <button onClick={() => requestSort('lastName')} className={getClassNamesFor('lastName')}> Last Name </button> </th>
+                    <th> <button onClick={() => requestSort('email')} className={getClassNamesFor('email')}> E-mail </button> </th>
+                    <th> <button onClick={() => requestSort('phone')} className={getClassNamesFor('phone')}> Phone </button> </th>
+                </tr>
+            </thead>
+            <tbody>
+                {employees.map(employee => {
+                    return (
+                        <tr key={employee.id}>
+                            <td>{employee.id}</td>
+                            <td> <img src={employee.picture} alt="Employee Photograph"></img> </td>
+                            <td>{employee.title}</td>
+                            <td>{employee.firstName}</td>
+                            <td>{employee.lastName}</td>
+                            <td>{employee.email}</td>
+                            <td>{employee.phone}</td>
+                        </tr>
+                    )
+                })}
+            </tbody>
+        </Table>
+    );
 }
+
+export default EmployeesTable;
