@@ -2,7 +2,7 @@
   [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/Psiko345/reactEmployeeDirectory)
 
   ## Preview
-  <!-- ![img](./public/img/preview.png) -->
+  ![img](./public/img/preview.png)
 
   ## Description
   * This Employee Directory allows employers to view a directory of all their employees at once and provides quick, easy, access to available employee information.

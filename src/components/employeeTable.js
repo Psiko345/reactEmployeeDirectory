@@ -1,5 +1,6 @@
 import React from "react";
 import { Table, Button } from 'react-bootstrap';
+import "../stylesheet.css"
 
 const useSortableData = (employees, config = null) => {
     const [sortConfig, setSortConfig] = React.useState(config);
@@ -59,7 +60,7 @@ const EmployeesTable = (props) => {
                     return (
                         <tr key={employee.id}>
                             <td>{employee.id}</td>
-                            <td> <img src={employee.picture} alt="Employee Photograph"></img> </td>
+                            <td> <img className="employeePhoto" src={employee.picture} alt="Employee Photograph"></img> </td>
                             <td>{employee.title}</td>
                             <td>{employee.firstName}</td>
                             <td>{employee.lastName}</td>
